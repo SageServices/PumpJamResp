@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-x-hidden;
+  background: linear-gradient(to right, #60a5fa, #fb923c);
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    opacity: 0.6;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #60a5fa, #fb923c);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
